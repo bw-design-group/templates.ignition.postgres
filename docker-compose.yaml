@@ -16,7 +16,8 @@ services:
         com.inductiveautomation.eventstream,
         com.inductiveautomation.historian,
         com.inductiveautomation.connectors.kafka,
-        com.inductiveautomation.perspective
+        com.inductiveautomation.perspective,
+        com.inductiveautomation.jdbc.postgresql
     secrets:
       - gateway-admin-password
 
