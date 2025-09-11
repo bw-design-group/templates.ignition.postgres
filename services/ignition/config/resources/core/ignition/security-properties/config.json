@@ -52,8 +52,8 @@
     ],
     "type": "AnyOf"
   },
-  "systemAuthProfile": "temp_1",
-  "systemIdentityProvider": "temp_1",
+  "systemAuthProfile": "default",
+  "systemIdentityProvider": "default",
   "userInactivityTimeout": 10,
   "writePermissions": {
     "securityLevels": [

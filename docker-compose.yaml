@@ -17,7 +17,9 @@ services:
         com.inductiveautomation.historian,
         com.inductiveautomation.connectors.kafka,
         com.inductiveautomation.perspective,
-        com.inductiveautomation.jdbc.postgresql
+        com.inductiveautomation.jdbc.postgresql,
+        com.inductiveautomation.webdev,
+        com.inductiveautomation.opcua
     secrets:
       - gateway-admin-password
 
