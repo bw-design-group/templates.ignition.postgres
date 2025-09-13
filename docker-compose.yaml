@@ -6,6 +6,9 @@ services:
       - ./services/ignition/config:/usr/local/bin/ignition/data/config 
       - ./services/ignition/projects:/usr/local/bin/ignition/data/projects
       - ./shared/gateway-utilities/projects/gateway-utilities:/usr/local/bin/ignition/data/projects/gateway-utilities
+
+      # Temporary volume to skip commissioning
+      - ./services/ignition/commissioning.json:/usr/local/bin/ignition/data/commissioning.json
     environment:
       IGNITION_EDITION: "standard"
       DISABLE_QUICKSTART: "true"
@@ -17,8 +20,6 @@ services:
         com.inductiveautomation.jdbc.postgresql,
         com.inductiveautomation.webdev,
         com.inductiveautomation.opcua
-    secrets:
-      - gateway-admin-password
     command: >
       -n ignition83
       --
@@ -63,10 +64,6 @@ services:
     networks:
       - default
       - proxy
-
-secrets:
-  gateway-admin-password:
-    file: secrets/GATEWAY_ADMIN_PASSWORD
 
 networks:
   default:

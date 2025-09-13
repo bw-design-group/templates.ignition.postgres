@@ -10,7 +10,7 @@
   },
   "settings": {
     "passwordComplexity": 3,
-    "passwordContainsPassword": true,
+    "passwordContainsPassword": false,
     "passwordContainsUserName": true,
     "passwordHistory": 0,
     "passwordMaxAge": 0,
