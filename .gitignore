@@ -13,3 +13,6 @@
 
 # Secrets
 secrets/*
+
+# Migration logs
+**/migration-log*
