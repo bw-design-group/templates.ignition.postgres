@@ -83,8 +83,6 @@ The gateway is configured with:
 │   ├── ignition/           # Gateway configuration and projects
 │   ├── postgres/           # Database setup and migrations
 │   └── pgadmin/           # pgAdmin configuration
-├── shared/
-│   └── gateway-utilities/  # Shared utilities project (submodule)
 └── docker-compose.yaml    # Main service definitions
 ```
 
