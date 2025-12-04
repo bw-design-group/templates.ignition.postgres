@@ -4,17 +4,12 @@ A Docker Compose template for quickly setting up an Ignition 8.3 gateway with Po
 
 ## Quick Start
 
-1. **Initialize submodules:**
-   ```bash
-   git submodule update --init --recursive
-   ```
-
-2. **Start the services:**
+1. **Start the services:**
    ```bash
    docker compose up -d
    ```
 
-3. **Access the gateway:**
+2. **Access the gateway:**
    - Ignition Gateway: https://ignition83.localtest.me (requires Traefik proxy)
    - Or direct access: http://localhost:8088
 
