@@ -1,7 +1,7 @@
 ---
 services:
   gateway:
-    image: inductiveautomation/ignition:8.3.0-rc1
+    image: inductiveautomation/ignition:latest
     volumes:
       - ./services/ignition/config:/usr/local/bin/ignition/data/config 
       - ./services/ignition/projects:/usr/local/bin/ignition/data/projects

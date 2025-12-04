@@ -20,11 +20,10 @@ A Docker Compose template for quickly setting up an Ignition 8.3 gateway with Po
 
 ## What's Included
 
-- **Ignition 8.3.0-rc1** with Standard Edition
+- **Latest Ignition 8.3 Image** with Standard Edition
 - **PostgreSQL** database with Liquibase migrations
 - **pgAdmin** for database management
 - **Traefik** integration for local development
-- **Gateway Utilities** project (via git submodule)
 
 ### Pre-enabled Modules
 
