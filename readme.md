@@ -20,15 +20,6 @@ A Docker Compose template for quickly setting up an Ignition 8.3 gateway with Po
 - **pgAdmin** for database management
 - **Traefik** integration for local development
 
-### Pre-enabled Modules
-
-- Event Stream
-- Historian
-- Perspective
-- PostgreSQL Driver
-- Web Development
-- OPC UA
-
 ## Services
 
 | Service | Description | Access |
