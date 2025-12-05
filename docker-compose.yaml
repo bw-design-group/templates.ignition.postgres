@@ -12,13 +12,6 @@ services:
       IGNITION_EDITION: "standard"
       DISABLE_QUICKSTART: "true"
       ACCEPT_IGNITION_EULA: "Y"
-      GATEWAY_MODULES_ENABLED: |
-        com.inductiveautomation.eventstream,
-        com.inductiveautomation.historian,
-        com.inductiveautomation.perspective,
-        com.inductiveautomation.jdbc.postgresql,
-        com.inductiveautomation.webdev,
-        com.inductiveautomation.opcua
     command: >
       -n ignition83
       --

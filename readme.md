@@ -88,7 +88,7 @@ The gateway is configured with:
 
 ## Customization
 
-- Modify `docker-compose.yaml` to add/remove modules
+- Modify `docker-compose.yaml` to add/remove modules by using the `GATEWAY_MODULES_ENABLED` environment variable.
 - Update database credentials in the compose file
 - Add your projects to `services/ignition/projects/`
 - Configure gateway settings in `services/ignition/config/`
