@@ -1,11 +1,10 @@
 ---
 services:
   gateway:
-    image: inductiveautomation/ignition:8.3.0-rc1
+    image: inductiveautomation/ignition:latest
     volumes:
       - ./services/ignition/config:/usr/local/bin/ignition/data/config 
       - ./services/ignition/projects:/usr/local/bin/ignition/data/projects
-      - ./shared/gateway-utilities/projects/gateway-utilities:/usr/local/bin/ignition/data/projects/gateway-utilities
 
       # Temporary volume to skip commissioning
       - ./services/ignition/commissioning.json:/usr/local/bin/ignition/data/commissioning.json
@@ -13,13 +12,6 @@ services:
       IGNITION_EDITION: "standard"
       DISABLE_QUICKSTART: "true"
       ACCEPT_IGNITION_EULA: "Y"
-      GATEWAY_MODULES_ENABLED: |
-        com.inductiveautomation.eventstream,
-        com.inductiveautomation.historian,
-        com.inductiveautomation.perspective,
-        com.inductiveautomation.jdbc.postgresql,
-        com.inductiveautomation.webdev,
-        com.inductiveautomation.opcua
     command: >
       -n ignition83
       --
@@ -51,19 +43,19 @@ services:
     entrypoint: ["/wait-for-it.sh", "postgres:5432", "--", "liquibase", "--defaultsFile=/database/liquibase/liquibase.docker.properties", "update"]
   
   # Uncomment the following lines to enable pgAdmin for database management
-  pgadmin:
-    image: dpage/pgadmin4
-    environment:
-      PGADMIN_DEFAULT_EMAIL: admin@admin.com
-      PGADMIN_DEFAULT_PASSWORD: root
-    volumes:
-      - ./services/pgadmin/servers.json:/pgadmin4/servers.json
-    labels:
-      traefik.enable: "true"
-      traefik.hostname: "postgres-pgadmin"
-    networks:
-      - default
-      - proxy
+  # pgadmin:
+  #   image: dpage/pgadmin4
+  #   environment:
+  #     PGADMIN_DEFAULT_EMAIL: admin@admin.com
+  #     PGADMIN_DEFAULT_PASSWORD: root
+  #   volumes:
+  #     - ./services/pgadmin/servers.json:/pgadmin4/servers.json
+  #   labels:
+  #     traefik.enable: "true"
+  #     traefik.hostname: "postgres-pgadmin"
+  #   networks:
+  #     - default
+  #     - proxy
 
 networks:
   default:

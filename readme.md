@@ -4,36 +4,21 @@ A Docker Compose template for quickly setting up an Ignition 8.3 gateway with Po
 
 ## Quick Start
 
-1. **Initialize submodules:**
-   ```bash
-   git submodule update --init --recursive
-   ```
-
-2. **Start the services:**
+1. **Start the services:**
    ```bash
    docker compose up -d
    ```
 
-3. **Access the gateway:**
+2. **Access the gateway:**
    - Ignition Gateway: https://ignition83.localtest.me (requires Traefik proxy)
    - Or direct access: http://localhost:8088
 
 ## What's Included
 
-- **Ignition 8.3.0-rc1** with Standard Edition
+- **Latest Ignition 8.3 Image** with Standard Edition
 - **PostgreSQL** database with Liquibase migrations
 - **pgAdmin** for database management
 - **Traefik** integration for local development
-- **Gateway Utilities** project (via git submodule)
-
-### Pre-enabled Modules
-
-- Event Stream
-- Historian
-- Perspective
-- PostgreSQL Driver
-- Web Development
-- OPC UA
 
 ## Services
 
@@ -89,14 +74,12 @@ The gateway is configured with:
 │   ├── ignition/           # Gateway configuration and projects
 │   ├── postgres/           # Database setup and migrations
 │   └── pgadmin/           # pgAdmin configuration
-├── shared/
-│   └── gateway-utilities/  # Shared utilities project (submodule)
 └── docker-compose.yaml    # Main service definitions
 ```
 
 ## Customization
 
-- Modify `docker-compose.yaml` to add/remove modules
+- Modify `docker-compose.yaml` to add/remove modules by using the `GATEWAY_MODULES_ENABLED` environment variable.
 - Update database credentials in the compose file
 - Add your projects to `services/ignition/projects/`
 - Configure gateway settings in `services/ignition/config/`

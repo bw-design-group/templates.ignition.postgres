@@ -1,3 +1,0 @@
-[submodule "shared/gateway-utilities"]
-	path = shared/gateway-utilities
-	url = https://github.com/design-group/ignition-gateway-utilities.git
