@@ -1,0 +1,44 @@
+name: Update Flint Module Binary
+
+# When Renovate (or anyone) bumps services/ignition/modules/flint-module.version
+# in a PR, download the matching release artifact and commit it to the PR branch
+# so the LFS-tracked .modl always matches the pinned version.
+
+on:
+  pull_request:
+    paths:
+      - services/ignition/modules/flint-module.version
+
+permissions:
+  contents: write
+
+jobs:
+  sync-module:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          lfs: true
+
+      - name: Read pinned module version
+        id: version
+        run: echo "version=$(grep -v '^#' services/ignition/modules/flint-module.version | tr -d '[:space:]')" >> "$GITHUB_OUTPUT"
+
+      - name: Download module artifact
+        run: |
+          curl -fsSL \
+            -o services/ignition/modules/Flint-Designer-Bridge.modl \
+            "https://github.com/bw-design-group/flint-designer-bridge-ignition-module/releases/download/v${{ steps.version.outputs.version }}/Flint-Designer-Bridge-${{ steps.version.outputs.version }}-8.3.modl"
+
+      - name: Commit updated module if changed
+        run: |
+          if git diff --quiet -- services/ignition/modules/Flint-Designer-Bridge.modl; then
+            echo "Module binary already up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add services/ignition/modules/Flint-Designer-Bridge.modl
+          git commit -m "chore: sync Flint Designer Bridge module binary to v${{ steps.version.outputs.version }}"
+          git push

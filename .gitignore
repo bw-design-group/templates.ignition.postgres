@@ -17,6 +17,9 @@ secrets/*
 # Local Environment Variables
 .env
 
+# Flint per-developer overrides
+flint.local.json
+
 # Node
 node_modules
 

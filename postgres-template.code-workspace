@@ -8,5 +8,10 @@
 		"python.linting.pylintArgs": [
 			"--rcfile=linting/.pylintrc"
 		]
+	},
+	"extensions": {
+		"recommendations": [
+			"Keith-gamble.ignition-flint"
+		]
 	}
 }
