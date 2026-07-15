@@ -1,10 +1,13 @@
 ---
 services:
   gateway:
-    image: inductiveautomation/ignition:latest
+    image: inductiveautomation/ignition:8.3.8
+    ports:
+      - "8088:8088"
     volumes:
-      - ./services/ignition/config:/usr/local/bin/ignition/data/config 
+      - ./services/ignition/config:/usr/local/bin/ignition/data/config
       - ./services/ignition/projects:/usr/local/bin/ignition/data/projects
+      - ./services/ignition/modules/Flint-Designer-Bridge.modl:/usr/local/bin/ignition/user-lib/modules/Flint-Designer-Bridge.modl
 
       # Temporary volume to skip commissioning
       - ./services/ignition/commissioning.json:/usr/local/bin/ignition/data/commissioning.json
@@ -12,6 +15,8 @@ services:
       IGNITION_EDITION: "standard"
       DISABLE_QUICKSTART: "true"
       ACCEPT_IGNITION_EULA: "Y"
+      ACCEPT_MODULE_LICENSES: "dev.bwdesigngroup.flint.FlintDesignerBridge"
+      ACCEPT_MODULE_CERTS: "dev.bwdesigngroup.flint.FlintDesignerBridge"
     command: >
       -n ignition83
       --
@@ -25,7 +30,7 @@ services:
       - proxy
 
   database:
-    image: postgres
+    image: postgres:18.4
     hostname: postgres
     volumes:
       - ./services/postgres/init-sql:/docker-entrypoint-initdb.d
@@ -34,7 +39,7 @@ services:
       POSTGRES_USER: postgres
     
   liquibase:
-    image: liquibase/liquibase
+    image: liquibase/liquibase:5.0.3
     depends_on:
       - database
     volumes:

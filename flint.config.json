@@ -1,0 +1,22 @@
+{
+    "schemaVersion": "0.2",
+    "project-paths": ["services/ignition/projects"],
+    "gateways": {
+        "ignition83": {
+            "id": "ignition83",
+            "ignitionVersion": "8.3.8",
+            "environments": {
+                "local": { "host": "localhost", "port": 8088, "ssl": false },
+                "proxy": { "host": "ignition83.localtest.me", "port": 443, "ssl": true }
+            },
+            "defaultEnvironment": "local",
+            "enabled": true,
+            "projects": []
+        }
+    },
+    "settings": {
+        "showInheritedResources": true,
+        "groupResourcesByType": true,
+        "autoRefreshProjects": true
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": ["config:recommended"],
+    "customManagers": [
+        {
+            "customType": "regex",
+            "managerFilePatterns": ["/^services/ignition/modules/flint-module\\.version$/"],
+            "matchStrings": [
+                "# renovate: datasource=(?<datasource>[a-z-]+) depName=(?<depName>[^\\s]+)\\n(?<currentValue>[0-9.]+)"
+            ],
+            "extractVersionTemplate": "^v(?<version>.*)$"
+        }
+    ],
+    "packageRules": [
+        {
+            "matchDepNames": ["bw-design-group/flint-designer-bridge-ignition-module"],
+            "commitMessageTopic": "Flint Designer Bridge module"
+        },
+        {
+            "matchDepNames": ["inductiveautomation/ignition"],
+            "commitMessageTopic": "Ignition gateway"
+        },
+        {
+            "matchDepNames": ["postgres"],
+            "matchUpdateTypes": ["major"],
+            "dependencyDashboardApproval": true
+        }
+    ]
+}
