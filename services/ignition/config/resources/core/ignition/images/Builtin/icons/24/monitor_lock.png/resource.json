@@ -1,0 +1,20 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "monitor_lock.png"
+  ],
+  "attributes": {
+    "width": 24,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "import",
+      "timestamp": "2025-09-11T16:24:36Z"
+    },
+    "size": 670,
+    "lastModificationSignature": "bda112c7909ef704839ec5bd01dd1ef76a70e7a2564cac0eca0e6284a68aa5f1",
+    "height": 24
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "title": "Production",
+  "description": "Client Production Environment",
+  "enabled": true,
+  "inheritable": true,
+  "parent": "core"
+}

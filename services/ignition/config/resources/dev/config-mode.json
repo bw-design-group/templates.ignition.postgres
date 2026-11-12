@@ -1,0 +1,7 @@
+{
+  "title": "Development",
+  "description": "Client Hosted Development Gateway",
+  "enabled": true,
+  "inheritable": true,
+  "parent": "core"
+}

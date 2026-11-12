@@ -1,0 +1,10 @@
+{
+  "sqlite": {
+    "dlqSweepAge": "P14D",
+    "highWaterPct": 0.8,
+    "maxAge": "P7D",
+    "maxBytes": 10737418240,
+    "maxRecords": 10000000,
+    "staleCursorGrace": "PT10M"
+  }
+}

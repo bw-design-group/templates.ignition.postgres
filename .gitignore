@@ -1,0 +1,69 @@
+# MacOS Files
+.DS_Store
+
+# Ignition content
+**/config/local
+**/config/resources/local
+
+**/conversion-report.txt
+**/.resources/
+
+# Secrets
+secrets/*
+
+# Migration logs
+**/migration-log*
+
+# Local Environment Variables
+.env
+
+# Node
+node_modules
+
+# Tailwind compiled CSS
+tailwind/tailwind-compiled.css
+tailwind/node_modules
+
+# Temp test files
+temp/
+
+# Local overrides
+.local/
+
+# Database files
+**/db/
+**/metricsdb/
+**/autobackup/
+**/db_backup_sqlite.idb
+**/valueStore.idb
+
+# Cache and temporary files
+**/jar-cache/
+**/request
+**/response
+*.tmp
+**/var
+
+# Log files
+*.log
+**/logs
+
+# Certificates and security
+**/certificates/
+**/keystore/
+
+# Gateway-specific runtime files
+**/.container-init.conf
+
+# Backup and converted files
+**.digest.json
+
+# Project conversion artifacts
+**/projects/conversion-report.txt
+**/migration-log-*.md
+
+# Alarm history files
+**/.alarms_*
+
+# Historian replication identity (unique per gateway)
+**/com.inductiveautomation.historian/replication/identity/

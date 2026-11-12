@@ -1,0 +1,7 @@
+{
+  "title": "Local Development",
+  "description": "Local Development running in a docker container",
+  "enabled": true,
+  "inheritable": true,
+  "parent": "core"
+}

@@ -1,0 +1,12 @@
+# example Liquibase Changelog
+# ref: https://docs.liquibase.com/concepts/changelogs/working-with-changelogs.html
+---
+databaseChangeLog:
+  - preConditions:  
+    - runningAs:  
+        username:  liquibase 
+
+  # - include:
+  #     file: tables/Example.sql
+  # - include:
+  #     file: simulated-data/insert-values.sql

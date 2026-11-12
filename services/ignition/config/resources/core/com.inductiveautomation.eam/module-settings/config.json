@@ -1,0 +1,21 @@
+{
+  "agentSettings": {
+    "forwardLeasedLicense": false,
+    "httpConnectTimeout": 10,
+    "httpReadTimeout": 60,
+    "sendStatsInterval": 45
+  },
+  "controllerSettings": {
+    "archiveLocationMode": "Automatic",
+    "backupRetentionAge": 0,
+    "backupRetentionTimeUnit": "Days",
+    "enableForwardMetrics": false,
+    "forwardMetricsFrequencyMins": 60,
+    "historyMetricsEnabled": false,
+    "lowDiskThresholdMB": 1024,
+    "maxRetainedBackupCount": 5,
+    "metricsRetentionAge": 0,
+    "metricsRetentionTimeUnit": "Days"
+  },
+  "installMode": "NotInstalled"
+}

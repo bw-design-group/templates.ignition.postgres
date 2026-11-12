@@ -1,0 +1,9 @@
+{
+  "backup": {
+    "backupDirectory": "",
+    "backupMethod": "ZIP",
+    "enabled": false,
+    "retentionCount": 7,
+    "schedule": "15 2 * * *"
+  }
+}

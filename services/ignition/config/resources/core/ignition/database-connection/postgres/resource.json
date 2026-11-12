@@ -1,0 +1,19 @@
+{
+  "scope": "A",
+  "description": "Local Postgres database running in the compose stack.",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "config.json"
+  ],
+  "attributes": {
+    "lastModification": {
+      "actor": "admin",
+      "timestamp": "2025-09-11T16:25:52Z"
+    },
+    "uuid": "36ac88fc-f091-4332-a6c5-30fc6de0969f",
+    "lastModificationSignature": "a12c2b21ee8e6b71ed1dadead3765a009a7a226dd3d4f749bb92e72032c12799",
+    "enabled": true
+  }
+}

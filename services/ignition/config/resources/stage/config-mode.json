@@ -1,0 +1,7 @@
+{
+  "title": "Staging",
+  "description": "Client Staging and acceptance environment",
+  "enabled": true,
+  "inheritable": true,
+  "parent": "core"
+}
